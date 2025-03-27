@@ -29,13 +29,11 @@ const Cart = () => {
     }
   }
 
-  console.log(cartResume())
-
   return (
     cart.length > 0
     ?
     <div className="w-full p-[32px]">
-      <ul className="w-full md:w-[700px] flex flex-col align-center justify-center gap-[32px] p-[20px] border-1 border-neutral-400 rounded-md">
+      <ul className="w-sm md:w-[700px] flex flex-col align-center justify-center gap-[32px] p-[20px] border-1 border-neutral-400 rounded-md">
         
         <div className="self-end">
           <span className="mr-4">Clear cart</span>

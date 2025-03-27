@@ -12,7 +12,7 @@ const Products = () => {
   return (
     <div className='w-full grid place-item-center'>
 
-    <ul className='w-full  grid place-items-center grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[16px] p-[32px]'>
+    <ul className='w-full  grid place-items-center grid-flow-row grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[16px] p-[32px]'>
       {products.map(product => (
         <li key={product.id} className='w-[300px] md:w-[200px] p-[16px] flex flex-col border-1 border-neutral-400 rounded-md'>
           <img src={product.image} alt={product.category} className='w-auto h-[200px] object-contain'/>
