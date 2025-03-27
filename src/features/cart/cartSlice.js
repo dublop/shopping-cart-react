@@ -26,8 +26,19 @@ export const cartSlice = createSlice({
                 state.value = [...state.value, {...action.payload, quantity: 1}]
             }
         },
+        decreaceProduct: (state, action) => {
+            const isInCart = state.value.findIndex(item => item.id == action.payload.id)
+
+            if(isInCart >= 0) {
+                if(state.value[isInCart].quantity != 1) {
+                    state.value[isInCart].quantity -= 1
+                } else {
+                    state.value = state.value.filter(item => item.id != action.payload.id)
+                }
+            } 
+        },
         deleteProduct: (state, action) => {
-            state.value = state.value.filter(item => item.id != action.payload.id)
+            state.value = state.value.filter(item => item.id != action.payload)
         },
         clearCart: (state) => {
             state.value = []
@@ -35,5 +46,5 @@ export const cartSlice = createSlice({
     }
 })
 
-export const { addProduct, deleteProduct, clearCart } = cartSlice.actions
+export const { addProduct, decreaceProduct, deleteProduct, clearCart } = cartSlice.actions
 export default cartSlice.reducer

@@ -9,7 +9,9 @@ function App() {
     <ProductsProvider>
       <Provider store={store}>
         <Navbar />
-        <Outlet />
+        <div className="grid place-content-center">
+          <Outlet />
+        </div>
       </Provider>
     </ProductsProvider>
   )
