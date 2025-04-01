@@ -23,9 +23,9 @@ const Cart = () => {
 
 
     return {
-      subtotal: totalInCart - (totalInCart * 0.16),
-      taxes: totalInCart * 0.16,
-      total: totalInCart,
+      subtotal: (totalInCart - (totalInCart * 0.16)).toFixed(2),
+      taxes: (totalInCart * 0.16).toFixed(2),
+      total: (totalInCart).toFixed(2),
     }
   }
 
@@ -61,7 +61,7 @@ const Cart = () => {
             <div className="w-full p-[16px] gap-[8px]">
               <p className=" w-[200px] md:w-[400px] truncate">{product.title}</p>
 
-              <p className="lign-middle">{product.price}</p>
+              <p className="lign-middle">${product.price}</p>
 
               <div className="flex items-center gap-2.5 mt-1">
               <button
@@ -94,9 +94,9 @@ const Cart = () => {
       <div className="flex flex-col align-center justify-center p-[16px] border-1 border-neutral-400 rounded-md mt-4" >
         <h3 className="text-xl">Resume</h3>
         <div>
-          <p>Subtotal: {cartResume().subtotal}</p>
-          <p>Taxes:  {cartResume().taxes}</p>
-          <p>Total:  {cartResume().total}</p>
+          <p>Subtotal: ${cartResume().subtotal}</p>
+          <p>Taxes:  ${cartResume().taxes}</p>
+          <p className="mt-2 text-xl">Total:  ${cartResume().total}</p>
         </div>
       </div>
     </div>
