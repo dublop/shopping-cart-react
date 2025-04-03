@@ -29,6 +29,14 @@ const Cart = () => {
     }
   }
 
+  const sendMessage = () => {
+    let text = ""
+    cart.map(item => (
+      text += `\n(${item.quantity}) - ${item.title} - [$${item.price}]`
+    ))
+    return text += `*Total: $${cartResume().total}*`
+  }
+
   return (
     cart.length > 0
     ?
@@ -97,6 +105,7 @@ const Cart = () => {
           <p>Subtotal: ${cartResume().subtotal}</p>
           <p>Taxes:  ${cartResume().taxes}</p>
           <p className="mt-2 text-xl">Total:  ${cartResume().total}</p>
+          <a href={`https://wa.me/584126080515?text=${sendMessage()}`} target="_blank" className='inline-block w-full text-center mt-2 p-2 bg-neutral-950 text-white rounded-md hover:cursor-pointer'>Checkout</a>
         </div>
       </div>
     </div>
